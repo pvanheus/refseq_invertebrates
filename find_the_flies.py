@@ -14,12 +14,12 @@ class Genome(object):
     taxon_id = ''
     name = ''
     lineage = ''
-    
+
     def __init__(self, accession='', taxon_id='', name=''):
         self.accession = accession
         self.taxon_id = taxon_id
         self.name = name
-        
+
     def __repr__(self):
         return '{} ({}: {})'.format(self.name, self.taxon_id, self.accession)
 
@@ -60,7 +60,7 @@ if __name__ == '__main__':
     parser.add_argument('email', help='Email address to use for Entrez')
     args = parser.parse_args()
     Entrez.email = args.email
-    
+
     filename = 'assembly_summary.txt'
     print('Retrieving RefSeq invertebrate assembly summary', file=sys.stderr)
     get_assembly_summary(filename)
